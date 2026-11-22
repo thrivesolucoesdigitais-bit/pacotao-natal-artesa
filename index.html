@@ -357,10 +357,37 @@ details p{padding-bottom:16px;color:var(--texto-suave)}
 .rodape-links a,.rodape-contato a{color:var(--ameixa);font-weight:700}
 footer p{margin-top:6px}
 .cookies{position:fixed;left:max(12px,env(safe-area-inset-left,0px));bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:40;max-width:min(330px,calc(100% - 24px));background:var(--papel);color:var(--texto-suave);border:1px solid var(--malva);border-radius:14px;padding:7px 8px 7px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 10px 24px -14px rgba(106,65,91,.45);font-size:12px;line-height:1.35}
+.cookies[hidden],.cookies.is-hidden{display:none !important}
 .cookies p{margin:0}
 .cookies a{color:var(--ameixa);font-weight:700}
 .cookies button{flex:none;font:inherit;font-weight:800;background:var(--malva-clara);color:var(--ameixa);border:0;border-radius:999px;padding:6px 12px;cursor:pointer}
 .cookies button:focus-visible{outline:2px solid var(--ameixa);outline-offset:2px}
+.cta-bloco{margin-top:36px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.cta-nota-centro{justify-content:center}
+@keyframes ctaPulso{
+  0%,100%{
+    transform:scale(1);
+    box-shadow:0 0 0 0 rgba(194,56,74,.55),0 14px 28px -12px rgba(194,56,74,.75);
+  }
+  50%{
+    transform:scale(1.03);
+    box-shadow:0 0 0 12px rgba(194,56,74,0),0 18px 34px -10px rgba(194,56,74,.9);
+  }
+}
+@keyframes ctaSeta{
+  0%,100%{transform:translateX(0)}
+  50%{transform:translateX(5px)}
+}
+.cta-animado{
+  animation:ctaPulso 2.6s ease-in-out infinite;
+}
+.cta-animado svg{
+  animation:ctaSeta 1.3s ease-in-out infinite;
+}
+.cta-animado:hover{
+  animation-play-state:paused;
+  transform:translateY(-3px) scale(1.04);
+}
 .nichos-topo{background:var(--malva-clara);padding-block:22px 26px}
 .nichos-topo .nichos-tit{margin-top:0}
 .vitrine{background:linear-gradient(180deg,var(--perola),var(--malva-clara))}
@@ -440,7 +467,7 @@ footer{background:var(--perola);color:var(--texto-suave);font-size:13.5px;text-a
   .virada .rosto{width:120px;height:120px}
   .balao::before{left:50%;top:-12px;margin-left:-12px;border:12px solid transparent;border-bottom-color:var(--papel);border-top:0}
   .garantia-box{grid-template-columns:1fr;justify-items:start;padding:26px}
-  .hero .cta,.final .cta{width:100%;font-size:17px;padding:16px 20px}
+  .hero .cta,.final .cta,.cta-bloco .cta{width:100%;max-width:440px;font-size:16.5px;padding:16px 18px;text-align:center}
   .inclui li{flex-direction:column;gap:2px}
   .inclui li span:last-child{text-align:left}
   .barra small{display:none}
@@ -580,6 +607,14 @@ footer{background:var(--perola);color:var(--texto-suave);font-size:13.5px;text-a
         <p><strong>Essa é a sensação de ter o ateliê organizado na palma da mão.</strong></p>
       </div>
     </div>
+
+    <div class="cta-bloco surge">
+      <a class="cta js-checkout cta-animado" href="#oferta">
+        Quero meu ateliê em paz neste fim de ano
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="cta-nota cta-nota-centro"><span>Acesso imediato</span><span>Pagamento único de R$ 47,90</span><span>Garantia de 7 dias</span></div>
+    </div>
   </div>
 </section>
 
@@ -710,6 +745,14 @@ footer{background:var(--perola);color:var(--texto-suave);font-size:13.5px;text-a
       </div>
     </div>
 
+    <div class="cta-bloco surge">
+      <a class="cta js-checkout cta-animado" href="#oferta">
+        Quero o ateliê inteiro na palma da minha mão
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="cta-nota cta-nota-centro"><span>Aplicativo completo</span><span>Sem mensalidade</span><span>Acesso imediato</span></div>
+    </div>
+
   </div>
 </section>
 
@@ -801,6 +844,14 @@ footer{background:var(--perola);color:var(--texto-suave);font-size:13.5px;text-a
       </div>
     </div>
     <p class="para-sempre">Os bônus são seus para sempre</p>
+
+    <div class="cta-bloco surge">
+      <a class="cta js-checkout cta-animado" href="#oferta">
+        Quero destravar o aplicativo + todos os 3 bônus
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="cta-nota cta-nota-centro"><span>De R$ 197 por apenas R$ 47,90</span><span>Bônus vitalícios</span><span>Sem mensalidade</span></div>
+    </div>
   </div>
 </section>
 
@@ -925,7 +976,7 @@ footer{background:var(--perola);color:var(--texto-suave);font-size:13.5px;text-a
   <div><small>Mega Pacotão de Natal</small><b>R$ 47,90</b></div>
   <a class="cta js-checkout" href="#oferta">Quero o meu</a>
 </div>
-<div class="cookies" id="cookies" hidden>
+<div class="cookies is-hidden" id="cookies" hidden style="display:none;">
   <p>Usamos cookies para melhorar sua experiência. <a href="privacidade.html">Saiba mais</a></p>
   <button type="button" id="cookies-ok">Ok</button>
 </div>
@@ -936,7 +987,7 @@ footer{background:var(--perola);color:var(--texto-suave);font-size:13.5px;text-a
    CONFIGURAÇÃO — preencha só estes 3 campos
    ========================================================= */
 const CHECKOUT_URL  = "https://pay.cakto.com.br/m43br42_1309834";   // link do checkout do produto na Cakto
-const PIXEL_ID      = "";                            // ID do Pixel da Meta (só números)
+const PIXEL_ID      = "29620135601007103";           // ID do Pixel da Meta (só números)
 const EMAIL_SUPORTE = "thrive.solucoesdigitais@gmail.com";                            // e-mail de suporte
 const PRECO = 47.90;
 /* ========================================================= */
@@ -987,10 +1038,31 @@ if(/^\d{6,20}$/.test(PIXEL_ID)){
   if(/@/.test(EMAIL_SUPORTE)){ const c=document.getElementById('contato-email'); c.innerHTML=''; const l=document.createElement('a'); l.href='mailto:'+EMAIL_SUPORTE; l.textContent=EMAIL_SUPORTE; c.append(l); }
 
   /* ---- aviso de cookies ---- */
-  const ck=document.getElementById('cookies');
-  let viu=false; try{ viu = localStorage.getItem('cookies-ok')==='1'; }catch(err){}
-  if(!viu) ck.hidden=false;
-  document.getElementById('cookies-ok').addEventListener('click',()=>{ ck.hidden=true; try{ localStorage.setItem('cookies-ok','1'); }catch(err){} });
+  const ck = document.getElementById('cookies');
+  const ckOk = document.getElementById('cookies-ok');
+  let viu = false;
+  try { viu = localStorage.getItem('cookies-ok') === '1'; } catch(err){}
+  if (ck) {
+    if (!viu) {
+      ck.classList.remove('is-hidden');
+      ck.removeAttribute('hidden');
+      ck.style.display = 'flex';
+    } else {
+      ck.classList.add('is-hidden');
+      ck.setAttribute('hidden', '');
+      ck.style.display = 'none';
+    }
+    if (ckOk) {
+      ckOk.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        ck.classList.add('is-hidden');
+        ck.setAttribute('hidden', '');
+        ck.style.display = 'none';
+        try { localStorage.setItem('cookies-ok', '1'); } catch(err){}
+      });
+    }
+  }
 
   /* ---- contagem até o Natal ---- */
   const hoje = new Date(); hoje.setHours(0,0,0,0);
